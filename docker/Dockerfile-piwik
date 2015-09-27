@@ -8,5 +8,9 @@ RUN /usr/local/bin/docker-php-ext-install mysqli
 # Add the files to /srv
 ADD ./piwik /srv/piwik
 
+# Install composer
+RUN curl -sS https://getcomposer.org/installer | php 
+RUN php composer.phar install
+
 # Run piwik using the built in php runner
 CMD php -S 0.0.0.0:8000 -t /srv/piwik
