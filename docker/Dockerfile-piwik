@@ -2,8 +2,8 @@ FROM php:cli
 
 # Install the mysql extension for php
 RUN apt-get -y update
-RUN apt-get -y install zlib1g-dev git
-RUN /usr/local/bin/docker-php-ext-install mysqli
+RUN apt-get -y install libjpeg-dev libpng-dev zlib1g-dev git
+RUN /usr/local/bin/docker-php-ext-install mysqli gd mbstring
 
 # Add the files to /srv
 ADD ./piwik /srv/piwik
