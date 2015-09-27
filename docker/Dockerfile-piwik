@@ -8,6 +8,9 @@ RUN /usr/local/bin/docker-php-ext-install mysqli gd mbstring
 # Add the files to /srv
 ADD ./piwik /srv/piwik
 
+# Add the php.ini config file
+ADD ./docker/piwik/php.ini /usr/local/etc/php/php.ini
+
 # Set the working directory
 WORKDIR /srv/piwik
 
