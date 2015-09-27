@@ -1,0 +1,29 @@
+nginx:
+  restart: always
+  build: .
+  dockerfile: ./docker/Dockerfile-nginx
+  ports:
+   - "80:80"
+   - "443:443"
+  links:
+   - piwik
+
+piwik:
+  restart: always
+  build: .
+  dockerfile: ./docker/Dockerfile-piwik
+  ports:
+    - "8000"
+  links:
+    - mysql
+
+mysql:
+  restart: always
+  build: .
+  dockerfile: ./docker/Dockerfile-mysql
+  volumes_from:
+   - mysqldata
+
+mysqldata:
+  build: .
+  dockerfile: ./docker/Dockerfile-mysql-data

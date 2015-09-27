@@ -1,0 +1,11 @@
+FROM nginx:latest
+
+RUN apt-get update
+RUN apt-get -y install dnsmasq
+
+RUN invoke-rc.d dnsmasq restart
+
+ADD docker/nginx/nginx.conf /etc/nginx/nginx.conf
+ADD docker/nginx/piwik.conf /etc/nginx/sites-enabled/piwik.conf
+RUN mkdir /certs
+ADD /certs /certs

@@ -1,0 +1,12 @@
+FROM php:cli
+
+# Install the mysql extension for php
+RUN apt-get -y update
+RUN apt-get -y install zlib1g-dev
+RUN /usr/local/bin/docker-php-ext-install mysqli
+
+# Add the files to /srv
+ADD ./piwik /srv/piwik
+
+# Run piwik using the built in php runner
+CMD php -S 0.0.0.0:8000 -t /srv/piwik
