@@ -21,13 +21,13 @@ git submodule update --init --recursive
 #### Step 2. HTTPS Configuration
 You'll either need to buy an SSL certificate for the domain your intending to use, or [generate a self signed certificate.](http://www.akadia.com/services/ssh_test_certificate.html) You'll then need to install the certificate and private key for nginx to use:
 
-- Create the directory ./certs at the base of the repository (it'll be ignored by the .gitignore file)
-- Place your unencrypted private key at ./certs/piwik.key
-- Place your certificate or certificate bundle at ./certs/piwik.crt
-- Edit ./docker/nginx/piwik.conf and replace <YOUR_URL> with the URL you're intending to use for piwik
+- Create the directory ```./certs``` at the base of the repository (it'll be ignored by the .gitignore file)
+- Place your unencrypted private key at ```./certs/piwik.key```
+- Place your certificate or certificate bundle at ```./certs/piwik.crt```
+- Edit ```./docker/nginx/piwik.conf``` and replace ```<YOUR_URL>``` with the URL you're intending to use for piwik
 
 #### Step 3. Database configuration
-You'll need to edit the ./docker/Dockerfile-mysql file and replace the variables with some strong passwords to be used for the root and standard database user respectively.
+You'll need to edit the ```./docker/Dockerfile-mysql``` file and replace the variables with some strong passwords to be used for the root and standard database user respectively.
 
 #### Step 4. Start with docker-compose
 If you haven't yet, [install docker-compose.](https://docs.docker.com/compose/install/)
