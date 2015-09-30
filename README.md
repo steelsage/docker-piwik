@@ -19,7 +19,7 @@ git submodule update --init --recursive
 ```
 
 #### Step 2. HTTPS Configuration
-You'll either need to buy an SSL certificate for the domain your intending to use, or [generate a self signed certificate.](http://www.akadia.com/services/ssh_test_certificate.html) You'll then need to install the certificate and private key for nginx to use:
+You'll either need to buy an SSL certificate for the domain you're intending to use, or [generate a self signed certificate.](http://www.akadia.com/services/ssh_test_certificate.html) You'll then need to install the certificate and private key for nginx to use:
 
 - Create the directory ```./certs``` at the base of the repository (it'll be ignored by the .gitignore file)
 - Place your unencrypted private key at ```./certs/piwik.key```
