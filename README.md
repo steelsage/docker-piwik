@@ -1,6 +1,6 @@
 # docker-piwik
 
-### Preamble
+### Pre-ramble
 Piwik, the open source analytics platform, MySQL and Nginx running in docker containers.
 These containers require a small amount of up front configuration. Usage of HTTPS is require unless you want to make relatively significant changes to the nginx configuration.
 
